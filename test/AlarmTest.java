@@ -11,7 +11,7 @@ public class AlarmTest {
     }
 
     @Test
-    void alarmClassCreationtest() {
+    void alarmClassCreationTest() {
         assertNotNull(alarm);
     }
 
