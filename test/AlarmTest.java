@@ -16,7 +16,12 @@ public class AlarmTest {
     }
 
     @Test
-    void alarmRingTest() {
+    void alarmRingTest0600() {
         assertEquals("RING!", alarm.ring("06:00"));
+    }
+
+    @Test
+    void alarmRingTest0601() {
+        assertEquals("RING!", alarm.ring("06:01"));
     }
 }
