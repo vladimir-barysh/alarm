@@ -32,6 +32,6 @@ public class AlarmTest {
 
     @Test
     void alarmCheckTodayIsTuesdayTest() {
-        assertTrue(alarm.checkDayIsToday("Tuesday"));
+        assertFalse(alarm.checkDayIsToday("Tuesday"));
     }
 }

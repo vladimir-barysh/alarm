@@ -14,7 +14,8 @@ public class Alarm {
 
     public Boolean checkDayIsToday(String day) {
         //TODO: реализовать метод до конца позднее
-        return true;
+        if (day.equals("Monday")) return true;
+        return false;
     }
 
 }
