@@ -24,4 +24,9 @@ public class AlarmTest {
     void alarmRingTest0601() {
         assertEquals("RING!", alarm.ring("06:01"));
     }
+
+    @Test
+    void alarmCheckDayIsTodayTest() {
+        assertTrue(alarm.checkDayIsToday("Monday"));
+    }
 }
