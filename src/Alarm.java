@@ -12,6 +12,11 @@ public class Alarm {
         throw new IllegalArgumentException("ring() works only with 06:00");
     }
 
+    /**
+     * Метод, проверяющий сегодня ли тот день, что указан
+     * @param day указанный день
+     * @return да, сегодня этот день / нет, сегодня другой день
+     */
     public Boolean checkDayIsToday(String day) {
         //TODO: реализовать метод до конца позднее
         if (day.equals("Monday")) return true;
