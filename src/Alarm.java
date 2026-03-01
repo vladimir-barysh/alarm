@@ -11,4 +11,10 @@ public class Alarm {
         if (time.equals("06:00") || time.equals("06:01")) return "RING!";
         throw new IllegalArgumentException("ring() works only with 06:00");
     }
+
+    public Boolean checkDayIsToday(String day) {
+        //TODO: реализовать метод до конца позднее
+        return true;
+    }
+
 }
