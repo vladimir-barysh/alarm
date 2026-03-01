@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Alarm alarm = new Alarm();
+        while (true) {
+            System.out.println("Введите какой сегодня день недели, пустая строка – выход");
+            String day = sc.nextLine();
+            if (day.isEmpty()) break;
+            System.out.println("Установите время для первого будильника:");
+            String firstAlarm = sc.nextLine();
+            System.out.println("Установите время для второго будильника:");
+            String secondAlarm = sc.nextLine();
+            switch (day) {
+                case "Monday": {
+                    System.out.println(alarm.ring(firstAlarm));
+                    System.out.println(alarm.ring(secondAlarm));
+                    break;
+                }
+                default: System.out.println("На сегодня будильников нет");
+            }
         }
     }
 }
