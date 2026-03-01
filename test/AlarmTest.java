@@ -29,4 +29,9 @@ public class AlarmTest {
     void alarmCheckDayIsTodayTest() {
         assertTrue(alarm.checkDayIsToday("Monday"));
     }
+
+    @Test
+    void alarmCheckTodayIsTuesdayTest() {
+        assertTrue(alarm.checkDayIsToday("Tuesday"));
+    }
 }
