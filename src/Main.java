@@ -6,7 +6,7 @@ class Main {
         Scanner sc = new Scanner(System.in);
         Alarm alarm = new Alarm();
 
-        System.out.println("Введите день недели когда сработает будильник, пустая строка – выход:");
+        System.out.println("Введите день недели когда сработает будильник:");
         String day = sc.nextLine();
 
         System.out.println("Установите время для будильника:");
