@@ -1,15 +1,26 @@
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
 public class Alarm {
     public Alarm() {}
 
     /**
      * Метод, который звонит в определенное время
-     * @param time время, в которое нужно звонить. Строка
+     * @param scheduledTime время, в которое нужно звонить. Строка
      * @return результат проверки времени
      */
-    public String ring(String time) {
+    public String ring(String scheduledTime) {
         //TODO: реализовать метод до конца позднее
-        if (time.equals("06:00") || time.equals("06:01")) return "RING!";
-        else return "Silence...";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        String now = LocalTime.now().format(formatter);
+        if (now.equals(scheduledTime)) {
+            return "RING!";
+        } else {
+            return "Silence...";
+        }
     }
 
     /**
@@ -19,8 +30,10 @@ public class Alarm {
      */
     public Boolean checkDayIsToday(String day) {
         //TODO: реализовать метод до конца позднее
-        if (day.equals("Monday")) return true;
-        return false;
+        String today = LocalDate.now()
+                .getDayOfWeek()
+                .getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+        return today.equalsIgnoreCase(day);
     }
 
 }
