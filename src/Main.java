@@ -5,20 +5,15 @@ class Main {
         Scanner sc = new Scanner(System.in);
         Alarm alarm = new Alarm();
         while (true) {
-            System.out.println("Введите какой сегодня день недели, пустая строка – выход");
+            System.out.println("Введите день недели, когда будет срабатывать будильник, пустая строка – выход");
             String day = sc.nextLine();
             if (day.isEmpty()) break;
-            System.out.println("Установите время для первого будильника:");
-            String firstAlarm = sc.nextLine();
-            System.out.println("Установите время для второго будильника:");
-            String secondAlarm = sc.nextLine();
-            switch (day) {
-                case "Monday": {
-                    System.out.println(alarm.ring(firstAlarm));
-                    System.out.println(alarm.ring(secondAlarm));
-                    break;
-                }
-                default: System.out.println("На сегодня будильников нет");
+            if (alarm.checkDayIsToday(day)) {
+                System.out.println("Установите время для будильника:");
+                String time = sc.nextLine();
+                System.out.println("Результат: " + alarm.ring(time));
+            } else {
+                System.out.println("Этот день не сегодня. Будильник не сработает.");
             }
         }
     }
