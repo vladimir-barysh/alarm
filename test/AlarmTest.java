@@ -34,4 +34,20 @@ public class AlarmTest {
     void alarmCheckTodayIsTuesdayTest() {
         assertFalse(alarm.checkDayIsToday("Tuesday"));
     }
+
+    @Test
+    void alarmRingNowTest() {
+        String currentTime = java.time.LocalTime.now()
+                .format(java.time.format.DateTimeFormatter.ofPattern("HH:mm"));
+
+        assertEquals("RING!", alarm.ring(currentTime));
+    }
+
+    @Test
+    void alarmCheckDayIsTodayDynamicTest() {
+        String currentDay = java.time.LocalDate.now().getDayOfWeek()
+                .getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ENGLISH);
+
+        assertTrue(alarm.checkDayIsToday(currentDay));
+    }
 }
