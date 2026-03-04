@@ -49,4 +49,12 @@ public class AlarmTest {
                 .getDisplayName(java.time.format.TextStyle.FULL, java.util.Locale.ENGLISH);
         assertTrue(alarm.checkDayIsToday(currentDay));
     }
+
+    @Test
+    void alarmRingDelayTime() {
+        String futureTime = java.time.LocalTime.now().plusMinutes(1)
+                .format(java.time.format.DateTimeFormatter.ofPattern("HH:mm"));
+
+        assertEquals("Silence...", alarm.ring(futureTime));
+    }
 }

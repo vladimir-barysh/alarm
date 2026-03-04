@@ -13,7 +13,6 @@ public class Alarm {
      * @return результат проверки времени
      */
     public String ring(String scheduledTime) {
-        //TODO: реализовать метод до конца позднее
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
         String now = LocalTime.now().format(formatter);
         if (now.equals(scheduledTime)) {
@@ -29,7 +28,6 @@ public class Alarm {
      * @return да, сегодня этот день / нет, сегодня другой день
      */
     public Boolean checkDayIsToday(String day) {
-        //TODO: реализовать метод до конца позднее
         String today = LocalDate.now()
                 .getDayOfWeek()
                 .getDisplayName(TextStyle.FULL, Locale.ENGLISH);
